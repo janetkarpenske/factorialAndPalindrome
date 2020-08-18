@@ -51,16 +51,6 @@ function findPrime(number) {
     }
     return num > 1;
   }
-
-  // numberArray.forEach(function(element) {
-  //   let i = 3;
-  //   if (i % 2 === 0 || i % 3 === 0 || i % 4 === 0) {
-  //     numberArray.splice(i, 1);
-  //   }
-  //   i++;
-  //   })
-  
-  // return numberArray;
 }
 
 $(document).ready(function() {
