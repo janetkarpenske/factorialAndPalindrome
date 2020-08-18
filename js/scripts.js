@@ -33,6 +33,36 @@ function isPalindrome(phrase){
   }
 }
 
+function findPrime(number) {
+  let numberArray = [];
+  console.log(number);
+  for (let i = 2; i <= number; i++) {
+    numberArray.push(i);
+  }
+
+  let primeNumbers = numberArray.filter(narrowPrime);
+  return primeNumbers;
+
+  function narrowPrime(num) {
+    for (let start = 2; num > start; start++) {
+      if (num % start == 0) {
+        return false;
+      }
+    }
+    return num > 1;
+  }
+
+  // numberArray.forEach(function(element) {
+  //   let i = 3;
+  //   if (i % 2 === 0 || i % 3 === 0 || i % 4 === 0) {
+  //     numberArray.splice(i, 1);
+  //   }
+  //   i++;
+  //   })
+  
+  // return numberArray;
+}
+
 $(document).ready(function() {
   $("#number").submit(function(event) {
     event.preventDefault();
@@ -47,13 +77,23 @@ $(document).ready(function() {
 
   $("#palinTester").submit(function(event) {
     event.preventDefault();
-
     const phrase = $("#inputpal").val();
 
     let palindrome = isPalindrome(phrase);
 
     $("#palindromeAnswer").text(palindrome);
     $("#palindromeAnswer").show();
+})
+$("#primeFinder").submit(function(event) {
+  event.preventDefault();
+  let number = parseInt($("input#number").val());
+
+  console.log(number);
+
+  let primeNumbers = findPrime(number);
+
+  $("#primeAnswer").text(primeNumbers);
+  $("#primeAnswer").show();
 })
 })
 
