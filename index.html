@@ -9,17 +9,30 @@
 </head>
 <body>
   <div class="container">
-    <h2>Enter a number to find the factorial</h2>
+    <!-- <h2>Enter a number to find the factorial</h2> -->
     <form id="number">
+      <p>Enter a number to find the factorial</p>
       <div class="form-group">
         <label for="inputNum">Input number</label>
         <input id="inputNum" class="form-control" type="text">
       </div>
-      
       <button type="submit">Get Factorial</button>
     </form>
+
+    <div id="returnNumber"></div>
+
+    <form id="palinTester">
+    <div class="form-group">
+      <p>Enter a phrase to check if it's a palindrome</p>
+      <label for="inputpal">Input palindrome</label>
+      <input id="inputpal" class="form-control" type="text">
+    </div>
+    <button type="submit">Is it a palindrome?</button>
+  </form>
+
   </div>
-  <div id="returnNumber"></div>
-</div>
+  
+  <div id="palindromeAnswer"></div>
+
 </body>
 </html>
